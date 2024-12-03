@@ -73,7 +73,7 @@ def test_find_suitable_user():
 
 def print_function(func, *args):
     name = func.__name__.replace('_', ' ').title()
-    arguments = ", ".join(map(str, args))
+    arguments = ", ".join(args)
     result = f"{name} [{arguments}]"
     print(result)
     return result
