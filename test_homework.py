@@ -8,9 +8,10 @@ def test_dark_theme_by_time():
     current_time = time(hour=23)
     night_start = time(hour=22)
     night_end = time(hour=7)
-
-    is_dark_theme = current_time >= night_start or current_time < night_end
-    assert is_dark_theme is True
+    
+    if night_start <= current_time or current_time < night_end:
+        dark_theme = True
+    assert dark_theme is True
 
 
 def test_dark_theme_by_time_and_user_choice():
